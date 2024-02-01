@@ -1,14 +1,52 @@
+/* app-login.component.css */
+
+/* Container de Login */
 .login-container {
     max-width: 300px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     text-align: center;
+    
+    /* Adicionando Flex para Centralizar Vertical e Horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Adicionando um Espaçamento Interno para os Elementos */
+    gap: 15px;
   }
   
+  /* Estilo para os Campos de Entrada */
+  input {
+    width: 100%;
+    padding: 12px; /* Aumentei o padding para dispositivos móveis */
+    box-sizing: border-box;
+    border: 2px solid #ddd; /* Aumentei a largura da borda */
+    border-radius: 8px; /* Aumentei o raio da borda para torná-la mais arredondada */
+    transition: border-color 0.3s;
+  }
+  
+  /* Estilo para o Botão de Entrar */
+  button {
+    width: 100%;
+    padding: 12px; /* Aumentei o padding para dispositivos móveis */
+    box-sizing: border-box;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Aumentei o raio da borda para torná-la mais arredondada */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+  }
+  
+  /* Estilo para Mensagem de Erro */
   .erro {
     color: red;
+    margin-top: 10px;
   }
