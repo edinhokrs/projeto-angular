@@ -1,2 +1,3 @@
-<app-login></app-login>
-<app-form></app-form>
+<app-login *ngIf="showLoginBox" (loginSuccess)="onLoginSuccess()" (hideLogin)="hideLoginBox()"></app-login>
+
+<app-form *ngIf="isLoginSuccessful"></app-form>

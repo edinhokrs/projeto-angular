@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  @Output() loginSuccess: EventEmitter<void> = new EventEmitter<void>();
+  @Output() hideLogin: EventEmitter<void> = new EventEmitter<void>();
+
   usuario: string = '';
   senha: string = '';
   mensagemErro: string = '';
 
   fazerLogin() {
-    // Adicione sua lógica de autenticação aqui
     if (this.usuario === 'DWU' && this.senha === 'DWU2023') {
-      // Lógica de sucesso de login (pode redirecionar para outra página, por exemplo)
-      console.log('Login bem-sucedido!');
+      // Emitir evento de sucesso de login
+      this.loginSuccess.emit();
+      // Emitir evento para esconder a caixa de login
+      this.hideLogin.emit();
     } else {
       this.mensagemErro = 'Usuário ou senha incorretos';
     }
